@@ -1,0 +1,326 @@
+body {
+  background-color: #1f242d;
+  color: #fff;
+}
+a {
+  color: #1f242d;
+  text-decoration: none;
+}
+
+/* ===== IMAGE BOX ===== */
+.home-img {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.home-img .img-box {
+  position: relative;
+  /* Responsive: clamp between 180px and 280px, using vw on small screens */
+  width: clamp(180px, 55vw, 280px);
+  height: clamp(180px, 55vw, 280px);
+  border-radius: 50%;
+  padding: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  animation: spin 6s linear infinite;
+}
+
+.home-img .img-box::before,
+.home-img .img-box::after {
+  content: '';
+  position: absolute;
+  /* Match parent size dynamically */
+  width: clamp(180px, 55vw, 280px);
+  height: clamp(180px, 55vw, 280px);
+  background: conic-gradient(transparent, transparent, transparent, #00ff40);
+  animation: spin 6s linear infinite;
+}
+
+
+#hobbies h2 {
+  color: #fff;
+}
+
+/* ── Carte hobby ── */
+.hobby-card {
+  background-color: #1f242d;
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 12px;
+  padding: 2rem 1.5rem;
+  text-align: center;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+  transition: transform .25s ease, box-shadow .25s ease;
+  height: 100%;
+}
+
+.hobby-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 8px 25px rgba(13, 202, 240, 0.15);
+}
+
+.hobby-card .emoji {
+  font-size: 3rem;
+  line-height: 1;
+}
+
+.hobby-card h5 {
+  color: #fff;
+  font-weight: 700;
+  margin-top: .75rem;
+  margin-bottom: .5rem;
+}
+
+.hobby-card p {
+  color: #adb5bd;
+  font-size: .9rem;
+  margin: 0;
+}
+
+/* ── Carousel indicators ── */
+.carousel-indicators [data-bs-target] {
+  background-color: #0dcaf0;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  border: none;
+}
+
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+  filter: invert(70%) sepia(100%) saturate(500%) hue-rotate(160deg);
+}
+
+.home-img .img-box::after {
+  animation-delay: -3s;
+}
+
+@keyframes spin {
+  0%   { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.home-img .img-box .img-item {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  background: slateblue;
+  border-radius: 50%;
+  border: .1px solid rgba(255,255,255,0.3);
+  display: flex;
+  justify-content: center;
+  z-index: 1;
+  overflow: hidden;
+  animation: spin-reverse 6s linear infinite;
+}
+
+@keyframes spin-reverse {
+  0%   { transform: rotate(0deg); }
+  100% { transform: rotate(-360deg); }
+}
+
+.home-img .img-box .img-item img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* ===== SECTION ===== */
+#apropos {
+  background-color: #1f242d !important;
+}
+
+#apropos h2 {
+  color: #fff;
+}
+
+#apropos p {
+  color: #ccc;
+  text-align: justify;
+}
+
+#apropos h3 {
+  color: #fff;
+}
+
+/* On mobile: stack image ABOVE text */
+@media (max-width: 767px) {
+  .row.align-items-center {
+    flex-direction: column-reverse;
+  }
+
+  .home-img {
+    margin-bottom: 2rem;
+  }
+
+  #apropos .col-md-6:first-child {
+    text-align: center !important;
+  }
+
+  #apropos h3 {
+    text-align: center;
+  }
+}
+
+/* On md+: image right, text left */
+@media (min-width: 768px) {
+  .home-img .img-box {
+    width: clamp(200px, 22vw, 300px);
+    height: clamp(200px, 22vw, 300px);
+  }
+  .home-img .img-box::before,
+  .home-img .img-box::after {
+    width: clamp(200px, 22vw, 300px);
+    height: clamp(200px, 22vw, 300px);
+  }
+}
+
+ /* ── Carte projet ── */
+ .projet-card {
+  position: relative;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.4);
+  cursor: pointer;
+}
+
+.projet-card img {
+  width: 100%;
+  height: 260px;
+  object-fit: cover;
+  display: block;
+}
+
+.projet-card .overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(100,100,100,0.55);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 1rem;
+}
+
+.projet-card .overlay h5 {
+  color: #fff;
+  font-weight: 700;
+  margin-bottom: .4rem;
+}
+
+.projet-card .overlay p {
+  color: #e0e0e0;
+  font-size: .875rem;
+  margin-bottom: .75rem;
+}
+
+.projet-card .overlay .btn-info {
+  width: 100%;
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #fff;
+}
+
+/* ── Carousel indicators ── */
+.carousel-indicators [data-bs-target] {
+  background-color: #0dcaf0;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+}
+
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+  filter: invert(70%) sepia(100%) saturate(500%) hue-rotate(160deg);
+}
+/* ══════════════════════════════
+   SECTION COMPÉTENCES
+══════════════════════════════ */
+
+#competences {
+  background-color: #1a1f28;
+}
+
+#competences h2 {
+  color: #fff;
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+
+/* ── Card catégorie ── */
+.skill-card {
+  background-color: #160101;
+  border: 1px solid rgba(255, 255, 255, 0.07);
+  border-radius: 14px;
+  padding: 1.8rem;
+  margin-bottom: 1.5rem;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+}
+
+/* ── Titre catégorie ── */
+.skill-category {
+  color: #fff;
+  font-weight: 700;
+  font-size: 1.1rem;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  padding-bottom: .5rem;
+  margin-bottom: 1.5rem;
+  border-bottom: 2px solid #0dcaf0;
+}
+
+.category-icon {
+  font-size: 1.4rem;
+  margin-right: .5rem;
+}
+
+/* ── Ligne label + pourcentage ── */
+.skill-label {
+  display: flex;
+  justify-content: space-between;
+  color: #cdd6e0;
+  font-size: .9rem;
+  margin-bottom: .4rem;
+}
+
+.skill-label span:last-child {
+  color: #0dcaf0;
+  font-weight: 700;
+}
+
+/* ── Barre conteneur (remplace Bootstrap .progress) ── */
+.progress-track {
+  width: 100%;
+  height: 8px;
+  background-color: rgba(255, 255, 255, 0.08);
+  border-radius: 50px;
+  margin-bottom: 1.4rem;
+  overflow: hidden;
+}
+
+/* ── Barre remplie (remplace Bootstrap .progress-bar) ── */
+.progress-fill {
+  height: 100%;
+  width: 0%;
+  border-radius: 50px;
+  transition: width 1.4s cubic-bezier(.4, 0, .2, 1);
+}
+
+/* ── Couleurs par catégorie ── */
+.bar-soft {
+  background: linear-gradient(90deg, #2ecc71, #27ae60);
+}
+
+.bar-tech {
+  background: linear-gradient(90deg, #0dcaf0, #0a9bbf);
+}
+
+.bar-cyber {
+  background: linear-gradient(90deg, #e74c3c, #c0392b);
+}
+
+.bar-tools {
+  background: linear-gradient(90deg, #f39c12, #d68910);
+}
