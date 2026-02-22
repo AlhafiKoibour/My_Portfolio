@@ -324,3 +324,7 @@ a {
 .bar-tools {
   background: linear-gradient(90deg, #f39c12, #d68910);
 }
+
+#contact h2 {
+  color: black;
+}
