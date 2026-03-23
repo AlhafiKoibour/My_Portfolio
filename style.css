@@ -7,7 +7,7 @@ a {
   text-decoration: none;
 }
 
-/* ===== IMAGE BOX ===== */
+/* === Image de profile === */
 .home-img {
   display: flex;
   justify-content: center;
@@ -38,7 +38,6 @@ a {
   background: conic-gradient(transparent, transparent, transparent, #00ff40);
   animation: spin 6s linear infinite;
 }
-
 
 #hobbies h2 {
   color: #fff;
@@ -235,30 +234,25 @@ a {
 .carousel-control-next-icon {
   filter: invert(70%) sepia(100%) saturate(500%) hue-rotate(160deg);
 }
-/* ══════════════════════════════
-   SECTION COMPÉTENCES
-══════════════════════════════ */
+/* === SECTION COMPÉTENCES === */
 
 #competences {
   background-color: #1a1f28;
 }
-
 #competences h2 {
   color: #fff;
   font-weight: 700;
   letter-spacing: 1px;
 }
-
 /* ── Card catégorie ── */
 .skill-card {
-  background-color: #160101;
+  background-color: #0dcaf0;
   border: 1px solid rgba(255, 255, 255, 0.07);
   border-radius: 14px;
   padding: 1.8rem;
   margin-bottom: 1.5rem;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
 }
-
 /* ── Titre catégorie ── */
 .skill-category {
   color: #fff;
@@ -270,53 +264,40 @@ a {
   margin-bottom: 1.5rem;
   border-bottom: 2px solid #0dcaf0;
 }
-
-.category-icon {
-  font-size: 1.4rem;
-  margin-right: .5rem;
-}
-
 /* ── Ligne label + pourcentage ── */
 .skill-label {
   display: flex;
   justify-content: space-between;
-  color: #cdd6e0;
+  color: #fff;
   font-size: .9rem;
   margin-bottom: .4rem;
 }
-
 .skill-label span:last-child {
-  color: #0dcaf0;
+  color: #1a1f28;
   font-weight: 700;
 }
-
 /* ── Barre conteneur (remplace Bootstrap .progress) ── */
 .progress-track {
   width: 100%;
-  height: 8px;
+  height: 5px;
   background-color: rgba(255, 255, 255, 0.08);
   border-radius: 50px;
-  margin-bottom: 1.4rem;
+  margin-bottom: 0.4rem;
   overflow: hidden;
 }
 
-/* ── Barre remplie (remplace Bootstrap .progress-bar) ── */
-.progress-fill {
-  height: 100%;
-  width: 0%;
-  border-radius: 50px;
-  transition: width 1.4s cubic-bezier(.4, 0, .2, 1);
+.skill-card:hover .progress-track
+{
+  background-color: #d68910;
 }
 
 /* ── Couleurs par catégorie ── */
 .bar-soft {
   background: linear-gradient(90deg, #2ecc71, #27ae60);
 }
-
 .bar-tech {
   background: linear-gradient(90deg, #0dcaf0, #0a9bbf);
 }
-
 .bar-cyber {
   background: linear-gradient(90deg, #e74c3c, #c0392b);
 }
@@ -324,7 +305,9 @@ a {
 .bar-tools {
   background: linear-gradient(90deg, #f39c12, #d68910);
 }
-
 #contact h2 {
   color: black;
 }
+
+
+
