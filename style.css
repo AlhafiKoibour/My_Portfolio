@@ -6,6 +6,17 @@ a {
   color: #1f242d;
   text-decoration: none;
 }
+.nav-item .nav-link:hover{
+    transform: translateY(-3px);
+  text-decoration: underline;
+}
+.navbar-brand {
+  font-weight: bold;
+}
+a:hover {
+    transform: scale(1.1); /* Petit effet de zoom au survol */
+    color: white;
+}
 
 /* === Image de profile === */
 .home-img {
@@ -13,7 +24,10 @@ a {
   justify-content: center;
   align-items: center;
 }
-
+.home-img:hover {
+    transform: scale(1.1); /* Petit effet de zoom au survol */
+    color: white;
+}
 .home-img .img-box {
   position: relative;
   /* Responsive: clamp between 180px and 280px, using vw on small screens */
@@ -202,6 +216,10 @@ a {
   justify-content: flex-end;
   padding: 1rem;
 }
+.projet-card:hover{
+    transform: translateY(-6px);
+  box-shadow: 0 8px 25px rgba(13, 202, 240, 0.15);
+}
 
 .projet-card .overlay h5 {
   color: #fff;
@@ -235,79 +253,104 @@ a {
   filter: invert(70%) sepia(100%) saturate(500%) hue-rotate(160deg);
 }
 /* === SECTION COMPÉTENCES === */
-
-#competences {
-  background-color: #1a1f28;
-}
-#competences h2 {
-  color: #fff;
-  font-weight: 700;
-  letter-spacing: 1px;
-}
-/* ── Card catégorie ── */
-.skill-card {
-  background-color: #0dcaf0;
-  border: 1px solid rgba(255, 255, 255, 0.07);
-  border-radius: 14px;
-  padding: 1.8rem;
-  margin-bottom: 1.5rem;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
-}
-/* ── Titre catégorie ── */
-.skill-category {
-  color: #fff;
-  font-weight: 700;
-  font-size: 1.1rem;
-  text-transform: uppercase;
-  letter-spacing: 2px;
-  padding-bottom: .5rem;
-  margin-bottom: 1.5rem;
-  border-bottom: 2px solid #0dcaf0;
-}
-/* ── Ligne label + pourcentage ── */
-.skill-label {
-  display: flex;
-  justify-content: space-between;
-  color: #fff;
-  font-size: .9rem;
-  margin-bottom: .4rem;
-}
-.skill-label span:last-child {
-  color: #1a1f28;
-  font-weight: 700;
-}
-/* ── Barre conteneur (remplace Bootstrap .progress) ── */
+/* Style du conteneur de la barre */
 .progress-track {
-  width: 100%;
-  height: 5px;
-  background-color: rgba(255, 255, 255, 0.08);
-  border-radius: 50px;
-  margin-bottom: 0.4rem;
-  overflow: hidden;
+    background-color: #e9ecef; /* Couleur de fond grise */
+    height: 4px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    position: relative;
+    overflow: visible; /* Pour laisser dépasser le point */
 }
 
-.skill-card:hover .progress-track
-{
-  background-color: #d68910;
+/* Style de base pour le remplissage */
+.progress-fill {
+    height: 100%;
+    width: 0; /* Commence à 0 pour l'animation */
+    border-radius: 10px;
+    position: relative;
+    transition: width 2s ease-in-out; /* Animation fluide de 2 secondes */
 }
 
-/* ── Couleurs par catégorie ── */
-.bar-soft {
-  background: linear-gradient(90deg, #2ecc71, #27ae60);
-}
-.bar-tech {
-  background: linear-gradient(90deg, #0dcaf0, #0a9bbf);
-}
-.bar-cyber {
-  background: linear-gradient(90deg, #e74c3c, #c0392b);
-}
-
-.bar-tools {
-  background: linear-gradient(90deg, #f39c12, #d68910);
-}
-#contact h2 {
-  color: black;
+/* Le point au bout de la barre */
+.progress-fill::after {
+    content: "";
+    position: absolute;
+    right: -6px;
+    top: -4px;
+    height: 12px;
+    width: 12px;
+    border-radius: 50%;
+    background-color: inherit; /* Prend la couleur de la barre */
 }
 
+/* --- Couleurs par catégorie --- */
+.bar-soft { background-color: #28a745; } /* Vert */
+.bar-tools { background-color: #17a2b8; } /* Cyan */
+.bar-tech { background-color: #007bff; } /* Bleu */
+.bar-cyber { background-color: #dc3545; } /* Rouge */
 
+/* Ajustement des labels */
+.skill-label {
+    display: flex;
+    justify-content: space-between;
+    font-weight: 500;
+    margin-bottom: 5px;
+    font-size: 0.9rem;
+}
 
+.skill-label  span:last-child{
+    color: #1f242d;
+}
+
+.skill-category {
+    font-weight: bold;
+    color:  #1f242d;
+    margin-bottom: 15px;
+    text-transform: uppercase;
+    padding-left: 10px;
+}
+.skill-card {
+background-color: #0dcaf0;
+border: 1px solid rgb(255, 255, 255, 0.07);
+border-radius: 14px;
+padding: 1.8rem;
+margin-bottom: 1.5rem;
+box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+}
+
+.skill-card:hover {
+
+  transform: translateY(-6px);
+  box-shadow: 0 8px 25px rgba(13, 202, 240, 0.15);
+
+}
+/* === Contact === */
+.send:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 8px 25px rgba(13, 202, 240, 0.15);
+}
+
+/* === Socials link === */
+.btn-flottant {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #25d366; /* Couleur officielle WhatsApp */
+    color: white;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 30px;
+    box-shadow: 2px 2px 10px rgba(0,0,0,0.3);
+    z-index: 1000; /* Pour qu'il passe au-dessus de tout */
+    transition: transform 0.3s ease;
+}
+
+.btn-flottant:hover {
+    transform: scale(1.1); /* Petit effet de zoom au survol */
+    color: white;
+}
